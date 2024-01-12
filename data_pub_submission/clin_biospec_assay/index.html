@@ -10,24 +10,24 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Biospecimen Metadata</title>
-    <meta name="title" content="Biospecimen Metadata">
-    <meta name="description" content="The HTAN biospecimen data model is designed to capture essential biospecimen data elements, including:">
+    <title>Submitting Clinical, Biospecimen or Assay Data</title>
+    <meta name="title" content="Submitting Clinical, Biospecimen or Assay Data">
+    <meta name="description" content="As stated in the Data and Publication Submission Overview, data submission involves two key steps:">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://jen-dfci.github.io/htan_missing_manual/data_model/biospecimens/">
+    <link rel="canonical" href="https://jen-dfci.github.io/htan_missing_manual/data_pub_submission/clin_biospec_assay/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://jen-dfci.github.io/htan_missing_manual/data_model/biospecimens/">
-    <meta property="og:title" content="Biospecimen Metadata">
-    <meta property="og:description" content="The HTAN biospecimen data model is designed to capture essential biospecimen data elements, including:">
+    <meta property="og:url" content="https://jen-dfci.github.io/htan_missing_manual/data_pub_submission/clin_biospec_assay/">
+    <meta property="og:title" content="Submitting Clinical, Biospecimen or Assay Data">
+    <meta property="og:description" content="As stated in the Data and Publication Submission Overview, data submission involves two key steps:">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://jen-dfci.github.io/htan_missing_manual/data_model/biospecimens/">
-    <meta property="twitter:title" content="Biospecimen Metadata">
-    <meta property="twitter:description" content="The HTAN biospecimen data model is designed to capture essential biospecimen data elements, including:">
+    <meta property="twitter:url" content="https://jen-dfci.github.io/htan_missing_manual/data_pub_submission/clin_biospec_assay/">
+    <meta property="twitter:title" content="Submitting Clinical, Biospecimen or Assay Data">
+    <meta property="twitter:description" content="As stated in the Data and Publication Submission Overview, data submission involves two key steps:">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -164,23 +164,94 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="biospecimen-metadata" class="break-words">
+<doc-anchor-target id="submitting-clinical-biospecimen-or-assay-data" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#biospecimen-metadata">#</doc-anchor-trigger>
-        <span>Biospecimen Metadata</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#submitting-clinical-biospecimen-or-assay-data">#</doc-anchor-trigger>
+        <span>Submitting Clinical, Biospecimen or Assay Data</span>
     </h1>
 </doc-anchor-target>
-<p>The HTAN biospecimen data model is designed to capture essential biospecimen data elements, including:</p>
+<p>As stated in the <a href="../overview/">Data and Publication Submission Overview</a>, data submission involves two key steps:</p>
+<ol>
+<li>Uploading data files to Synapse; and</li>
+<li>Completing and validating manifests using the Data Curator App (DCA).</li>
+</ol>
+<p>This page provides more details regarding those steps.  However, you will also need to understand the HTAN data model and specific requirements for your particular data type.  For a general overview of the HTAN data model, please see <a href="../data_model.md">HTAN Data Model</a>.  To understand specific requirements for your data type, please see <a href="https://humantumoratlas.org/standards">Data Standards</a>.</p>
+<p>HTAN uses the Synapse <a href="https:/www.synapse.org">Web Portal</a> and <a href="https://dca.app.sagebionetworks.org/">DCA</a> to manage clinical, biospecimen and assay data submissions (dataset ingress). In order to submit data, your center should:</p>
+<ol>
+<li><doc-anchor-trigger to="#have-at-least-one-user-with-certified-user-status-on-synapse">Have at least one user with Certified User status on Synapse.</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#contact-your-data-liaison-to-set-up-a-project-on-synapse">Contact your Data Liaison</doc-anchor-trigger> to:
+<ol type="a">
+<li>set up a project on Synapse for metadata submission;</li>
+<li>set up a Synapse cloud bucket for dataset uploads; and</li>
+<li>create an HTAN atlas ID (only needs to be done once per atlas).</li>
+</ol>
+</li>
+<li><doc-anchor-trigger to="#ensure-the-dataset-conforms-to-the-htan-data-model-uses-htan-identifiers-and-does-not-contain-phi">Ensure the assay dataset conforms to the HTAN Data Model, uses HTAN Identifiers and does not contain Protected Health Information (PHI).</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#organize-the-data">Organize the data.</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#upload-your-dataset-to-the-synapse-project">Upload your assay dataset to Synapse.</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#validate-and-submit-metadata-using-synapses-data-curator-app-dca">Validate and submit metadata using the DCA.</doc-anchor-trigger></li>
+</ol>
+<p>Please read the rest of this page for more information about each of these steps.</p>
+<doc-anchor-target id="have-at-least-one-user-with-certified-user-status-on-synapse">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#have-at-least-one-user-with-certified-user-status-on-synapse">#</doc-anchor-trigger>
+        <span>Have at least one user with Certified User status on Synapse.</span>
+    </h2>
+</doc-anchor-target>
+<p>To upload files to Synapse, you need to be a <a href="https://help.synapse.org/docs/Synapse-User-Account-Types.2007072795.html">certified user</a>. Because Synapse stores data from human subjects research, Sage Bionetworks requires that you demonstrate understanding of and compliance with privacy and security issues. You can complete your certification by taking a <a href="https://www.synapse.org/#!Quiz:Certification">short certification quiz</a> on Synapse.</p>
+<doc-anchor-target id="contact-your-data-liaison-to-set-up-a-project-on-synapse">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contact-your-data-liaison-to-set-up-a-project-on-synapse">#</doc-anchor-trigger>
+        <span>Contact your Data Liaison to set up a project on Synapse.</span>
+    </h2>
+</doc-anchor-target>
+<p>When you are ready to upload data, please contact your [data liaison](add internal link here). Your data liaison will need to know:</p>
+<ol>
+<li>Your center</li>
+<li>Who on your team will be doing the data upload.</li>
+<li>The synapse usernames for team members identified in #2.</li>
+</ol>
+<p>With the above information, the DCC will initialize your Synapse project and storage location. Once your Synapse project has been initialized, your data liaison will reach out to you with the location of your Synapse project and you can begin uploading your data.</p>
+<doc-anchor-target id="ensure-the-dataset-conforms-to-the-htan-data-model-uses-htan-identifiers-and-does-not-contain-phi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ensure-the-dataset-conforms-to-the-htan-data-model-uses-htan-identifiers-and-does-not-contain-phi">#</doc-anchor-trigger>
+        <span>Ensure the dataset conforms to the HTAN Data Model, uses HTAN Identifiers and does not contain PHI.</span>
+    </h2>
+</doc-anchor-target>
+<p>The HTAN Data Model is built upon data standards described on the <a href="https://data.humantumoratlas.org/standards">&quot;Data Standards&quot;</a> page. All HTAN Centers are required to encode their clinical, biospecimen and assay data and metadata using the HTAN Data Model. If you have a new data type which is not currently represented in the HTAN Data Model, please contact your data liaison.</p>
+<p>A concrete way to understand the expectations for data submissions is to view the metadata templates for clinical, biospecimen and assay data available in Synapse&#x27;s Data Curator App (<a href="https://dca-docs.scrollhelp.site/DCA/Working-version/HTAN/">DCA</a>). For any given dataset, you may be submitting:</p>
 <ul>
-<li>Acquisition method, e.g. autopsy, biopsy, fine needle aspirate, etc.</li>
-<li>Topography Code, indicating site within the body, e.g. based on <a href="https://seer.cancer.gov/icd-o-3/">ICD-O-3</a>.</li>
-<li>Collection information e.g. time, duration of ischemia, temperature, etc.</li>
-<li>Processing of parent biospecimen information e.g. fresh, frozen, etc.</li>
-<li>Biospecimen and derivative clinical metadata ie Histologic Morphology Code, e.g. based on <a href="https://seer.cancer.gov/icd-o-3/">ICD-O-3</a>.</li>
-<li>Coordinates for derivative biospecimen from their parent biospecimen.</li>
-<li>Processing of derivative biospecimen for downstream analysis e.g. dissociation, sectioning, analyte isolation, etc.</li>
+<li>clinical data metadata(s)</li>
+<li>biospecimen metadata(s)</li>
+<li>assay metadata</li>
+<li>assay data files</li>
 </ul>
-<p>Complete details are available online at: <a href="https://data.humantumoratlas.org/standard/biospecimen">https://data.humantumoratlas.org/standard/biospecimen</a></p>
+<p>The first three items will be validated and submitted using the Data Curator App. The last item, assay data files, only needs to be uploaded to the synapse project itself.</p>
+<p>All data should be identified using HTAN identifiers. Please see the <a href="https://docs.google.com/document/d/1podtPP8L1UNvVxx9_c_szlDcU1f8n7bige6XA_GoRVM/edit?usp=sharing">HTAN Identifier SOP</a> for detailed instructions regarding assigning HTAN Identifiers.</p>
+<p><em>Please review your data to ensure that it does not contain PHI.</em></p>
+<doc-anchor-target id="organize-the-data">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#organize-the-data">#</doc-anchor-trigger>
+        <span>Organize the data</span>
+    </h2>
+</doc-anchor-target>
+<p>Please organize your data in the following manner.</p>
+<p><span class="docs-emoji">&#x2757;</span> <span class="docs-emoji">&#x2757;</span>  Need more information here.  (does HTAN use the flattened or hierarchy format?)</p>
+<doc-anchor-target id="upload-your-dataset-to-the-synapse-project">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#upload-your-dataset-to-the-synapse-project">#</doc-anchor-trigger>
+        <span>Upload your dataset to the Synapse Project.</span>
+    </h2>
+</doc-anchor-target>
+<p>Data files can be transferred using the Synapse User Interface (Synapse UI) or programmatically. Please see Synapse&#x27;s <a href="https://dca-docs.scrollhelp.site/DCA/Working-version/HTAN/uploading-data">Data Ingress Docs</a> for more information on how to upload files.</p>
+<doc-anchor-target id="validate-and-submit-metadata-using-synapses-data-curator-app-dca">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#validate-and-submit-metadata-using-synapses-data-curator-app-dca">#</doc-anchor-trigger>
+        <span>Validate and submit metadata using Synapse&#x27;s Data Curator App (DCA).</span>
+    </h2>
+</doc-anchor-target>
+<p>The DCA contains HTAN-specific metadata templates which can be completed on the app or downloaded.  Once these are completed by your center, they should then be validated and submitted via the DCA.</p>
+<p>Please see Synapse&#x27;s <a href="https://dca-docs.scrollhelp.site/DCA/Working-version/HTAN/validate-and-submit-your-metadata">Data Ingress Docs</a> for more details regarding the web app.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -190,23 +261,16 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../data_model/clinical/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../data_pub_submission/data_liaisons/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Clinical Metadata</span>
+                                                <span class="block mt-1">Data Liaisons</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../data_model/sequencing/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Sequencing Data</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -247,6 +311,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Biospecimen Metadata", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Submitting Clinical, Biospecimen or Assay Data", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
