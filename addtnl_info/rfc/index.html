@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/htan_missing_manual">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758733407333">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.758734525577">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>The RFC Process</title>
-    <meta name="title" content="The RFC Process">
+    <title>The RFC Process and Data Model Changes</title>
+    <meta name="title" content="The RFC Process and Data Model Changes">
+    <meta name="description" content="The HTAN Data Model is expected to evolve with advances in science.">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://jen-dfci.github.io/htan_missing_manual/addtnl_info/rfc/">
@@ -19,20 +20,22 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jen-dfci.github.io/htan_missing_manual/addtnl_info/rfc/">
-    <meta property="og:title" content="The RFC Process">
+    <meta property="og:title" content="The RFC Process and Data Model Changes">
+    <meta property="og:description" content="The HTAN Data Model is expected to evolve with advances in science.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jen-dfci.github.io/htan_missing_manual/addtnl_info/rfc/">
-    <meta property="twitter:title" content="The RFC Process">
+    <meta property="twitter:title" content="The RFC Process and Data Model Changes">
+    <meta property="twitter:description" content="The HTAN Data Model is expected to evolve with advances in science.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.758733407333" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.758734525577" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758733407333" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.758734525577" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758733407333" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.758734525577" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -161,12 +164,64 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="the-rfc-process" class="break-words">
+<doc-anchor-target id="the-rfc-process-and-data-model-changes" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#the-rfc-process">#</doc-anchor-trigger>
-        <span>The RFC Process</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-rfc-process-and-data-model-changes">#</doc-anchor-trigger>
+        <span>The RFC Process and Data Model Changes</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="rfc-overview">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rfc-overview">#</doc-anchor-trigger>
+        <span>RFC Overview</span>
+    </h2>
+</doc-anchor-target>
+<p>The HTAN Data Model is expected to evolve with advances in science.  This evolution is a community-driven, peer-reviewed process, where members of a working group will first assess established community data standards and create a request for comment (RFC) document soliciting community feedback.</p>
+<p>The status of current RFCs is provided in <a href="https://docs.google.com/document/d/1dJ7NUoVCtewdtny8bITwtWnzItB4IibL5kJO3ZNh0go/edit?usp=sharing">The RFC Overview</a> document.  The RFC Overview can be used to:</p>
+<ul>
+<li>Get a sense of what is available in DCA.</li>
+<li>Get a sense of new assays being considered.</li>
+<li>Look at old RFCs &amp; get a sense of past discussions/considerations.</li>
+</ul>
+<p><span class="docs-emoji">&#x2757;</span> The links to specific RFC documents within the RFC Overview do <strong>not</strong> represent the final data model.  Once an RFC is available on the Data Curator App (DCA), the metadata template available on the DCA and HTAN&#x27;s <a href="https://humantumoratlas.org/standards">Data Standards page</a> contain the current data model.</p>
+<doc-anchor-target id="data-model-changes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-model-changes">#</doc-anchor-trigger>
+        <span>Data Model Changes</span>
+    </h2>
+</doc-anchor-target>
+<p>New assays or data types do not always require data model changes and an RFC.</p>
+<p>The following generally do not require a change to the Data Model:</p>
+<ul>
+<li>New assays which are specific to only one center or will only be used in a limited capacity. These can often be accommodated as “Other Assay”.</li>
+<li>Additional, optional free text metadata fields.  Additional columns can be added to your copy of the metadata template if they do not require validation by the Data Curator App.</li>
+</ul>
+<p>The following require changes to the Data Model and would need to undergo the Request for Comments (RFC) process:</p>
+<ul>
+<li>New assay types which are expected to be used frequently by multiple centers.</li>
+<li>New metadata templates or additional required metadata fields which should be validated.</li>
+</ul>
+<p>Please contact your <a href="../../data_pub_submission/data_liaisons/">data liaison</a> for help determining whether a Data Model change is needed and how to make a Data Model change request.</p>
+<doc-anchor-target id="rfc-process">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rfc-process">#</doc-anchor-trigger>
+        <span>RFC Process</span>
+    </h2>
+</doc-anchor-target>
+<p>Once a new assay type or a set of needed Data Model changes are identified, the following steps are taken:</p>
+<ol>
+<li>A working group is organized* by the Data Coordinating Center (DCC).  As a part of this process, the following people are also designated:
+<ul>
+<li>A <em>DCC Owner</em>, who is responsible for finalizing the RFC and overall accepting/rejecting/integrating community feedback.  The DCC Owner is also the primary point of contact for the specified RFC.</li>
+<li>A <em>single DCC PI</em>, to monitor progress towards completion.</li>
+<li>One or more <em>Co-Authors</em> from one or more HTAN centers, to help draft the RFC. Representatives from each HTAN center help identify individuals at their center who can contribute to a particular RFC.</li>
+</ul>
+</li>
+<li>A first draft of an RFC Google Document is created* based upon feedback from the working group.</li>
+<li><em>The RFC is open for public comment</em>. All HTAN members can provide suggestions by adding comments directly to the document.</li>
+<li>After a designated period of time, the <em>RFC is closed</em>.  Feedback from HTAN community is no longer accepted. The content of the RFC will be reflected in the respective version of the HTAN Data Model used for validating metadata files uploaded to the DCC.</li>
+<li>The *metadata template is available on the <a href="https://dca.app.sagebionetworks.org/">Data Curator App (DCA)*</a>.</li>
+</ol>
 
                                 
                                 <!-- Required only on API pages -->
@@ -226,6 +281,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "The RFC Process", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "The RFC Process and Data Model Changes", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
