@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/htan_missing_manual">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760207499088">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.760208732566">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
@@ -31,11 +31,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.760207499088" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.760208732566" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760207499088" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.760208732566" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760207499088" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.760208732566" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -172,7 +172,7 @@
 </doc-anchor-target>
 <p>As stated in <a href="../overview/">Data and Publication Submission Overview</a>, data submission involves two key steps:</p>
 <ol>
-<li>Uploading data files to Synapse; and</li>
+<li>Uploading assay data files to Synapse; and</li>
 <li>Completing and validating manifests using the Data Curator App (DCA).</li>
 </ol>
 <p>This page provides more details regarding those steps.  However, you will also need to understand the HTAN data model and specific requirements for your particular data type.  For a general overview of the HTAN data model, please see <a href="../data_model.md">HTAN Data Model</a>.  To understand specific requirements for your data type, please see <a href="https://humantumoratlas.org/standards">Data Standards</a>.</p>
@@ -181,8 +181,7 @@
 <li><doc-anchor-trigger to="#have-at-least-one-user-with-certified-user-status-on-synapse">Have at least one user with Certified User status on Synapse.</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#contact-your-data-liaison-to-set-up-your-project-and-cloud-bucket">Contact your Data Liaison to set up your project and cloud bucket.</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#ensure-the-dataset-conforms-to-the-htan-data-model-uses-htan-identifiers-and-does-not-contain-phi">Ensure the assay dataset conforms to the HTAN Data Model, uses HTAN Identifiers and does not contain Protected Health Information (PHI).</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#organize-the-data">Organize the data.</doc-anchor-trigger></li>
-<li><doc-anchor-trigger to="#upload-your-dataset-to-the-synapse-project">Upload your dataset to Synapse.</doc-anchor-trigger></li>
+<li><doc-anchor-trigger to="#organize-and-upload-your-dataset-to-the-synapse-project">Organize and upload your dataset to the Synapse Project</doc-anchor-trigger></li>
 <li><doc-anchor-trigger to="#validate-and-submit-metadata-using-synapses-data-curator-app-dca">Validate and submit metadata using the DCA.</doc-anchor-trigger></li>
 </ol>
 <p>Please read the rest of this page for more information about each of these steps.</p>
@@ -192,7 +191,7 @@
         <span>Have at least one user with Certified User status on Synapse.</span>
     </h2>
 </doc-anchor-target>
-<p>To upload files to Synapse, you need to be a <a href="https://help.synapse.org/docs/Synapse-User-Account-Types.2007072795.html">certified user</a>. Because Synapse stores data from human subjects research, Sage Bionetworks requires that you demonstrate understanding of and compliance with privacy and security issues. You can complete your certification by taking a short certification quiz. Please see the Synapse <a href="https://help.synapse.org/docs/Synapse-User-Account-Types.2007072795.html">certified user documentation</a> for more inforamtion.</p>
+<p>To upload files to Synapse, you need to be a <a href="https://help.synapse.org/docs/Synapse-User-Account-Types.2007072795.html">certified user</a>. Because Synapse stores data from human subjects research, Sage Bionetworks requires that you demonstrate understanding of and compliance with privacy and security issues. You can complete your certification by taking a short certification quiz. Please see the Synapse <a href="https://help.synapse.org/docs/Synapse-User-Account-Types.2007072795.html">certified user documentation</a> for more information.</p>
 <doc-anchor-target id="contact-your-data-liaison-to-set-up-your-project-and-cloud-bucket">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#contact-your-data-liaison-to-set-up-your-project-and-cloud-bucket">#</doc-anchor-trigger>
@@ -216,13 +215,13 @@
 <p>The HTAN Data Model is built upon data standards described on the <a href="https://data.humantumoratlas.org/standards">Data Standards</a> page. All HTAN Centers are required to encode their clinical, biospecimen and assay data and metadata using the HTAN Data Model. If you have a new data type which is not currently represented in the HTAN Data Model, please contact your data liaison.</p>
 <p>A concrete way to understand the expectations for data submissions is to view the metadata templates for clinical, biospecimen and assay data available in Synapse&#x27;s Data Curator App (<a href="https://dca.app.sagebionetworks.org/">DCA</a>). For any given dataset, you may be submitting:</p>
 <ul>
-<li>clinical data metadata template(s)</li>
-<li>biospecimen metadata template(s)</li>
-<li>assay metadata template(s)</li>
+<li>clinical manifest(s), e.g. Demographics, Diagnosis</li>
+<li>biospecimen manifest(s)</li>
+<li>assay manifest(s), e.g. Bulk RNA-seq level 1</li>
 <li>assay data files</li>
 </ul>
 <p>The first three items will be validated and submitted using the Data Curator App. The last item, assay data files, only needs to be uploaded to the synapse project itself.</p>
-<p>All data should be identified using HTAN identifiers. Please see the <a href="https://docs.google.com/document/d/1podtPP8L1UNvVxx9_c_szlDcU1f8n7bige6XA_GoRVM/edit?usp=sharing">HTAN Identifier SOP</a> for detailed instructions regarding assigning HTAN Identifiers.</p>
+<p>All data should be identified using HTAN identifiers. Please see the <a href="../../data_model/identifiers/">HTAN Identifier</a> section of this manual for more information regarding HTAN identifiers.</p>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-blue-500 dark:bg-blue-400"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -240,20 +239,13 @@
         </div>
     </div>
 </div>
-<doc-anchor-target id="organize-the-data">
+<doc-anchor-target id="organize-and-upload-your-dataset-to-the-synapse-project">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#organize-the-data">#</doc-anchor-trigger>
-        <span>Organize the data</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#organize-and-upload-your-dataset-to-the-synapse-project">#</doc-anchor-trigger>
+        <span>Organize and upload your dataset to the Synapse Project</span>
     </h2>
 </doc-anchor-target>
-<p>Please organize your data in the following manner.</p>
-<p><span class="docs-emoji">&#x2757;</span> <span class="docs-emoji">&#x2757;</span>  Need more information here.  (does HTAN use the flattened or hierarchy format?)</p>
-<doc-anchor-target id="upload-your-dataset-to-the-synapse-project">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#upload-your-dataset-to-the-synapse-project">#</doc-anchor-trigger>
-        <span>Upload your dataset to the Synapse Project.</span>
-    </h2>
-</doc-anchor-target>
+<p>Please organize your data using the flattened data layout described in Synapse&#x27;s <a href="https://dca-docs.scrollhelp.site/DCA/Working-version/HTAN/organize-your-data-upload#OrganizeyourDataUpload-FlattenedDataLayoutExample">Data Ingress Docs</a></p>
 <p>Data files can be transferred using the Synapse User Interface (Synapse UI) or programmatically. Please see Synapse&#x27;s <a href="https://dca-docs.scrollhelp.site/DCA/Working-version/HTAN/uploading-data">Data Ingress Docs</a> for more information on how to upload files.</p>
 <doc-anchor-target id="validate-and-submit-metadata-using-synapses-data-curator-app-dca">
     <h2>
