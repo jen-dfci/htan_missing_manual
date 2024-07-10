@@ -15,4 +15,4 @@ Once new data standards pages are added to this manual, the [Data Standards](htt
 !!!
 
 Test embedding:
-[!embed allowFullScreen="true"](https://humantumoratlas.org/standards)
+[!embed allowFullScreen="true" el="embed"](https://humantumoratlas.org/standards)
