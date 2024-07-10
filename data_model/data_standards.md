@@ -16,6 +16,3 @@ Once new data standards pages are added to this manual, the [Data Standards](htt
 
 Test embedding:
 [!embed allowFullScreen="true" el="embed"](https://humantumoratlas.org/standards)
-
-Test code:
-:::code source="<https://github.com/ncihtan/htan-portal/blob/master/pages/standards.tsx>" :::
